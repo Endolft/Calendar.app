@@ -7,10 +7,6 @@ import { useEffect } from 'react';
 export const AppRouter = () => {
 	const { checkAuthToken, status } = useAuthStore();
 
-	if (status === 'cheking') {
-		return <h3>Cheking</h3>;
-	}
-
 	useEffect(() => {
 		checkAuthToken();
 	}, []);
@@ -20,9 +16,11 @@ export const AppRouter = () => {
 			{status === 'authenticated' ? (
 				<Route path={'/*'} element={<CalendarRoute />} />
 			) : (
-				<Route path='/auth/*' element={<AuthRoutes />} />
+				<>
+					<Route path='/auth/*' element={<AuthRoutes />} />
+					<Route path='/*' element={<Navigate to='auth/login' />} />
+				</>
 			)}
-			<Route path='/*' element={<Navigate to='auth/login' />} />
 		</Routes>
 	);
 };
