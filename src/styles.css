@@ -1,0 +1,40 @@
+html{
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+#root {
+ width: 100%;
+ height: 100%;
+}
+.dataPicker{
+  font: inherit;
+  letter-spacing: inherit;
+  color: currentColor;
+  padding: 4px 0 5px;
+  border: 2px black;
+  box-sizing: content-box;
+  background: none;
+  height: 1.4375em;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  min-width: 0;
+  width: 100%;
+  -webkit-animation-name: mui-auto-fill-cancel;
+  animation-name: mui-auto-fill-cancel;
+  -webkit-animation-duration: 10ms;
+  animation-duration: 10ms;
+  background-color: #d6e3d7;
+  z-index: 9999;
+}
+.react-datepicker-popper{
+  z-index: 9999;
+}
+
+.swal2-container {
+  z-index: 20000 !important;
+}
